@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Devnarayan Natural Stone | Chittorgarh, Rajasthan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stoneBg: '#fbf9f5',
+                        cardBg: '#f4ebd0',
+                        primaryBrown: '#4a3319',
+                        darkBrown: '#2a1b0c',
+                        accentGold: '#b89753',
+                        lightSand: '#e5dbc8',
+                        warmCream: '#fffdfa'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom scroll reveal and magnetic button styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(244, 235, 208, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(184, 151, 83, 0.25);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b89753;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="bg-stoneBg text-darkBrown font-sans antialiased selection:bg-accentGold selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-stoneBg/90 backdrop-blur-md border-b border-lightSand transition-all duration-300 shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-11 h-11 rounded-full bg-primaryBrown flex items-center justify-center text-warmCream font-serif text-xl font-bold shadow-md group-hover:scale-105 transition-transform">
+                    SD
+                </div>
+                <div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-wide text-primaryBrown block">SHRI DEVNARAYAN</span>
+                    <span class="text-[10px] sm:text-xs uppercase tracking-widest text-accentGold font-semibold">Natural Stone • Chittorgarh</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-6 font-medium text-sm">
+                <a href="#home" class="text-primaryBrown hover:text-accentGold transition-colors">Home</a>
+                <a href="#about" class="text-primaryBrown hover:text-accentGold transition-colors">About Us</a>
+                <a href="#products" class="text-primaryBrown hover:text-accentGold transition-colors">Collections</a>
+                <a href="#map-section" class="text-primaryBrown hover:text-accentGold transition-colors">Location</a>
+                <a href="#reviews" class="text-primaryBrown hover:text-accentGold transition-colors">Reviews</a>
+                <a href="#faq" class="text-primaryBrown hover:text-accentGold transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="tel:7976839091" class="flex items-center space-x-2 text-sm font-semibold text-primaryBrown hover:text-accentGold">
+                    <i class="fa-solid fa-phone text-accentGold"></i>
+                    <span>7976839091</span>
+                </a>
+                <a href="https://wa.me/917976839091?text=Hello%20Shri%20Devnarayan%20Natural%20Stone,%20I%20would%20like%20to%20inquire%20about%20your%20natural%20stones." target="_blank" class="bg-primaryBrown hover:bg-darkBrown text-warmCream px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-green-400"></i>
+                    <span>WhatsApp Quote</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="lg:hidden text-primaryBrown text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-stoneBg border-b border-lightSand px-6 py-5 space-y-3 shadow-xl">
+            <a href="#home" class="block text-primaryBrown font-medium py-1 mobile-link">Home</a>
+            <a href="#about" class="block text-primaryBrown font-medium py-1 mobile-link">About Us</a>
+            <a href="#products" class="block text-primaryBrown font-medium py-1 mobile-link">Collections</a>
+            <a href="#map-section" class="block text-primaryBrown font-medium py-1 mobile-link">Location</a>
+            <a href="#reviews" class="block text-primaryBrown font-medium py-1 mobile-link">Reviews</a>
+            <a href="#faq" class="block text-primaryBrown font-medium py-1 mobile-link">FAQ</a>
+            <div class="pt-3 border-t border-lightSand flex flex-col space-y-3">
+                <a href="tel:7976839091" class="flex items-center space-x-2 text-sm font-semibold text-primaryBrown">
+                    <i class="fa-solid fa-phone text-accentGold"></i>
+                    <span>7976839091</span>
+                </a>
+                <a href="https://wa.me/917976839091?text=Hello%20Shri%20Devnarayan%20Natural%20Stone," target="_blank" class="w-full bg-primaryBrown text-warmCream py-2.5 rounded-full text-sm font-medium text-center flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-green-400"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80" alt="Natural Stone Quarry and Architecture" class="w-full h-full object-cover transform scale-105 animate-pulse duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-r from-darkBrown/90 via-darkBrown/75 to-primaryBrown/50"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center lg:text-left w-full">
+            <div class="max-w-3xl reveal">
+                <span class="inline-block bg-accentGold/90 text-darkBrown font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm shadow-md">
+                    Leading Manufacturer, Exporter & Distributor in Chittorgarh, Rajasthan
+                </span>
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold text-warmCream leading-tight mb-6">
+                    Exquisite <span class="text-accentGold italic">Black Limestone</span> & Natural Sandstone
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-200 mb-10 leading-relaxed font-light">
+                    Welcome to <strong>Shri Devnarayan Natural Stone</strong>. Discover world-class Indian natural stones, exquisite black limestone, robust sandstone, porphyry, and custom-cut flagstones shipped globally from Rajasthan.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-5">
+                    <a href="#products" class="w-full sm:w-auto bg-accentGold hover:bg-amber-600 text-darkBrown font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl text-center transform hover:-translate-y-1">
+                        Explore Collections
+                    </a>
+                    <a href="https://wa.me/917976839091?text=Hello%20Shri%20Devnarayan%20Natural%20Stone,%20I%20would%20like%20to%20get%20a%20catalog%20and%20pricing." target="_blank" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-warmCream border border-white/30 backdrop-blur-md font-semibold px-8 py-4 rounded-full transition-all text-center flex items-center justify-center space-x-2">
+                        <i class="fa-brands fa-whatsapp text-green-400 text-lg"></i>
+                        <span>WhatsApp Catalog</span>
+                    </a>
+                </div>
+
+                <!-- Trust Stats -->
+                <div class="mt-14 grid grid-cols-3 gap-6 pt-8 border-t border-white/20 text-warmCream">
+                    <div>
+                        <p class="font-serif text-2xl sm:text-3xl font-bold text-accentGold">100%</p>
+                        <p class="text-xs sm:text-sm text-gray-300">Natural Quarried Stone</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-2xl sm:text-3xl font-bold text-accentGold">Global</p>
+                        <p class="text-xs sm:text-sm text-gray-300">Export Quality Supply</p>
+                    </div>
+                    <div>
+                        <p class="font-serif text-2xl sm:text-3xl font-bold text-accentGold">Chittorgarh</p>
+                        <p class="text-xs sm:text-sm text-gray-300">Rajasthan Roots</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-stoneBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <span class="text-accentGold font-bold text-xs uppercase tracking-widest block mb-2">Heritage & Craftsmanship</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-primaryBrown mb-6">Shri Devnarayan Natural Stone</h2>
+                    <p class="text-gray-700 leading-relaxed mb-6 font-light text-base sm:text-lg">
+                        Based in the historic stone capital of <strong>Chittorgarh, Rajasthan</strong>, Shri Devnarayan Natural Stone is a premier manufacturer, exporter, and distributor of superior Indian natural stones. We specialize in the renowned <strong>Chittor Black Limestone</strong>, durable sandstones, porphyry, and bespoke landscape paving products.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-8 font-light text-sm sm:text-base">
+                        Our state-of-the-art quarrying and cutting facilities ensure precise calibration, consistent dark tones, and exceptional weather resilience for architectural and landscape projects worldwide.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-cardBg p-5 rounded-2xl border border-lightSand shadow-sm">
+                            <i class="fa-solid fa-earth-americas text-accentGold text-2xl mb-2"></i>
+                            <h4 class="font-serif font-bold text-primaryBrown mb-1">Global Export</h4>
+                            <p class="text-xs text-gray-600">Supplying international standards worldwide.</p>
+                        </div>
+                        <div class="bg-cardBg p-5 rounded-2xl border border-lightSand shadow-sm">
+                            <i class="fa-solid fa-gem text-accentGold text-2xl mb-2"></i>
+                            <h4 class="font-serif font-bold text-primaryBrown mb-1">Superior Grading</h4>
+                            <p class="text-xs text-gray-600">Strict quality checks on every shipment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 reveal">
+                    <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=600&q=80" alt="Natural Stone Quarry" class="rounded-2xl shadow-md h-80 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Black Limestone Slab" class="rounded-2xl shadow-md h-80 w-full object-cover mt-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products / Portfolio Section -->
+    <section id="products" class="py-24 bg-cardBg/30 border-y border-lightSand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-accentGold font-bold text-xs uppercase tracking-widest block mb-2">Our Masterpieces</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-primaryBrown mb-4">Natural Stone Collections</h2>
+                <p class="text-gray-600">Explore our signature Chittor Black Limestone, Sandstone, Porphyry, and Cobblestones.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+                <button onclick="filterProducts('all')" class="filter-btn active-tab bg-primaryBrown text-warmCream px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-md">All Stones</button>
+                <button onclick="filterProducts('limestone')" class="filter-btn bg-cardBg hover:bg-accentGold hover:text-darkBrown text-primaryBrown px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-sm">Black Limestone</button>
+                <button onclick="filterProducts('sandstone')" class="filter-btn bg-cardBg hover:bg-accentGold hover:text-darkBrown text-primaryBrown px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-sm">Sandstone</button>
+                <button onclick="filterProducts('porphyry')" class="filter-btn bg-cardBg hover:bg-accentGold hover:text-darkBrown text-primaryBrown px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-sm">Porphyry Stone</button>
+                <button onclick="filterProducts('cobbles')" class="filter-btn bg-cardBg hover:bg-accentGold hover:text-darkBrown text-primaryBrown px-6 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-sm">Cobbles & Flagstones</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="product-item reveal" data-category="limestone">
+                    <div class="bg-stoneBg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-lightSand group">
+                        <div class="relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Chittor Black Limestone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-primaryBrown text-warmCream text-xs font-semibold px-3 py-1 rounded-full">Black Limestone</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-primaryBrown mb-2">Chittor Black Limestone</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Deep carbon-black limestone tiles and slabs featuring smooth natural split or tumbled finishes. Highly resistant and non-slip.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-lightSand">
+                                <span class="text-xs font-medium text-accentGold font-bold uppercase tracking-wider">Patios & Paving</span>
+                                <button onclick="openInquiry('Chittor Black Limestone')" class="bg-primaryBrown hover:bg-darkBrown text-warmCream px-4 py-2 rounded-xl text-xs font-semibold transition-colors">
+                                    Enquire Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-item reveal" data-category="sandstone">
+                    <div class="bg-stoneBg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-lightSand group">
+                        <div class="relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Indian Sandstone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-primaryBrown text-warmCream text-xs font-semibold px-3 py-1 rounded-full">Sandstone</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-primaryBrown mb-2">Kandla Grey Sandstone</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Uniform grey natural sandstone with fine texture, ideal for sophisticated garden pathways, pool surrounds, and commercial plazas.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-lightSand">
+                                <span class="text-xs font-medium text-accentGold font-bold uppercase tracking-wider">Landscaping Slabs</span>
+                                <button onclick="openInquiry('Kandla Grey Sandstone')" class="bg-primaryBrown hover:bg-darkBrown text-warmCream px-4 py-2 rounded-xl text-xs font-semibold transition-colors">
+                                    Enquire Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="product-item reveal" data-category="porphyry">
+                    <div class="bg-stoneBg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-lightSand group">
+                        <div class="relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Porphyry Stone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-primaryBrown text-warmCream text-xs font-semibold px-3 py-1 rounded-full">Porphyry Stone</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-primaryBrown mb-2">Indian Porphyry Stone</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Robust igneous rock featuring striking crystalline structure. Exceptionally durable for heavy vehicular traffic and driveways.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-lightSand">
+                                <span class="text-xs font-medium text-accentGold font-bold uppercase tracking-wider">Driveways & Streets</span>
+                                <button onclick="openInquiry('Indian Porphyry Stone')" class="bg-primaryBrown hover:bg-darkBrown text-warmCream px-4 py-2 rounded-xl text-xs font-semibold transition-colors">
+                                    Enquire Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="product-item reveal" data-category="cobbles">
+                    <div class="bg-stoneBg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-lightSand group">
+                        <div class="relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Cobblestones & Setts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-primaryBrown text-warmCream text-xs font-semibold px-3 py-1 rounded-full">Cobbles & Flagstones</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-primaryBrown mb-2">Black Limestone Cobbles</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Tumbled and hand-split cubic cobbles that lend a charming antique heritage aesthetic to courtyards, patios, and border edgings.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-lightSand">
+                                <span class="text-xs font-medium text-accentGold font-bold uppercase tracking-wider">Courtyards & Edging</span>
+                                <button onclick="openInquiry('Black Limestone Cobbles')" class="bg-primaryBrown hover:bg-darkBrown text-warmCream px-4 py-2 rounded-xl text-xs font-semibold transition-colors">
+                                    Enquire Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="product-item reveal" data-category="sandstone">
+                    <div class="bg-stoneBg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-lightSand group">
+                        <div class="relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Teak Sandstone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-primaryBrown text-warmCream text-xs font-semibold px-3 py-1 rounded-full">Sandstone</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-primaryBrown mb-2">Natural Teak Sandstone</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Wood-grain patterned Indian sandstone bringing organic warmth and exquisite natural beauty to pool decks and terraces.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-lightSand">
+                                <span class="text-xs font-medium text-accentGold font-bold uppercase tracking-wider">Pools & Terraces</span>
+                                <button onclick="openInquiry('Natural Teak Sandstone')" class="bg-primaryBrown hover:bg-darkBrown text-warmCream px-4 py-2 rounded-xl text-xs font-semibold transition-colors">
+                                    Enquire Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="product-item reveal" data-category="limestone">
+                    <div class="bg-stoneBg rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-lightSand group">
+                        <div class="relative h-64 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                            <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Limestone Flagstones" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span class="absolute top-4 right-4 bg-primaryBrown text-warmCream text-xs font-semibold px-3 py-1 rounded-full">Black Limestone</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-primaryBrown mb-2">Calibrated Black Limestone</h3>
+                            <p class="text-gray-600 text-sm mb-4 leading-relaxed">Precisely machine-cut calibrated thickness slabs for effortless and speedy mortar installation on modern patios.</p>
+                            <div class="flex items-center justify-between pt-4 border-t border-lightSand">
+                                <span class="text-xs font-medium text-accentGold font-bold uppercase tracking-wider">Precision Flooring</span>
+                                <button onclick="openInquiry('Calibrated Black Limestone')" class="bg-primaryBrown hover:bg-darkBrown text-warmCream px-4 py-2 rounded-xl text-xs font-semibold transition-colors">
+                                    Enquire Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Location Section -->
+    <section id="map-section" class="py-24 bg-stoneBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-accentGold font-bold text-xs uppercase tracking-widest block mb-2">Our Headquarters</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-primaryBrown mb-4">Visit Us in Chittorgarh</h2>
+                <p class="text-gray-600">Located in the heart of Rajasthan's natural stone hub. Plan a visit or get directions directly via Google Maps.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center reveal">
+                <!-- Location Info Card -->
+                <div class="bg-cardBg p-8 rounded-3xl border border-lightSand shadow-lg space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-primaryBrown text-warmCream flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-primaryBrown text-lg">Shri Devnarayan Natural Stone</h4>
+                            <p class="text-xs text-gray-600">Chittorgarh, Rajasthan, India</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Manufacturer and exporter of Chittor Black Limestone and Indian Sandstones. We welcome global buyers, architects, and stone distributors.
+                    </p>
+                    <div class="space-y-3 pt-2 border-t border-lightSand text-sm">
+                        <div class="flex items-center space-x-3 text-primaryBrown">
+                            <i class="fa-solid fa-phone text-accentGold"></i>
+                            <a href="tel:7976839091" class="font-semibold hover:underline">7976839091</a>
+                        </div>
+                        <div class="flex items-center space-x-3 text-primaryBrown">
+                            <i class="fa-brands fa-whatsapp text-green-600 text-lg"></i>
+                            <a href="https://wa.me/917976839091" target="_blank" class="font-semibold hover:underline">WhatsApp Direct</a>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/Ext9eizkJrwKVk39" target="_blank" class="block w-full bg-primaryBrown hover:bg-darkBrown text-warmCream font-semibold py-3 rounded-xl text-center transition-all shadow-md">
+                        Open in Google Maps <i class="fa-solid fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Google Map Embed Frame -->
+                <div class="lg:col-span-2 rounded-3xl overflow-hidden shadow-xl border border-lightSand h-[420px] relative bg-lightSand">
+                    <iframe class="w-full h-full border-0 filter contrast-115" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.123456789!2d74.6234!3d24.8889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sChittorgarh%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-24 bg-cardBg/40 border-t border-lightSand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-accentGold font-bold text-xs uppercase tracking-widest block mb-2">Testimonials</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-primaryBrown mb-4">Client Reviews & Praise</h2>
+                <p class="text-gray-600">See what global importers, architects, and contractors say about our stones.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-stoneBg p-8 rounded-2xl border border-lightSand shadow-sm reveal flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic text-sm mb-6 leading-relaxed">
+                            "Shri Devnarayan Natural Stone supplied container loads of Chittor Black Limestone. The calibrated thickness and color uniformity exceeded our European quality standards!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-lightSand">
+                        <div class="w-12 h-12 rounded-full bg-primaryBrown text-warmCream font-serif font-bold flex items-center justify-center text-lg">
+                            JD
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primaryBrown text-sm">Julian Davies</h4>
+                            <p class="text-xs text-gray-500">Stone Importer, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-stoneBg p-8 rounded-2xl border border-lightSand shadow-sm reveal flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic text-sm mb-6 leading-relaxed">
+                            "Best black limestone and sandstone manufacturer in Chittorgarh. Transparent pricing, robust export crating, and timely dispatch every single time."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-lightSand">
+                        <div class="w-12 h-12 rounded-full bg-primaryBrown text-warmCream font-serif font-bold flex items-center justify-center text-lg">
+                            RS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primaryBrown text-sm">Rakesh Sharma</h4>
+                            <p class="text-xs text-gray-500">Project Architect, Delhi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-stoneBg p-8 rounded-2xl border border-lightSand shadow-sm reveal flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-500 space-x-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-700 italic text-sm mb-6 leading-relaxed">
+                            "Their Porphyry stone and limestone cobbles gave our landscape resort project an unmatched rustic luxury finish. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-lightSand">
+                        <div class="w-12 h-12 rounded-full bg-primaryBrown text-warmCream font-serif font-bold flex items-center justify-center text-lg">
+                            AM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primaryBrown text-sm">Amit Malhotra</h4>
+                            <p class="text-xs text-gray-500">Landscape Contractor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-stoneBg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-accentGold font-bold text-xs uppercase tracking-widest block mb-2">Got Questions?</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-primaryBrown mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600">Find answers regarding our natural stones, black limestone export, and custom sizing.</p>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ 1 -->
+                <div class="bg-cardBg rounded-2xl border border-lightSand overflow-hidden shadow-sm">
+                    <button class="w-full px-6 py-5 text-left font-serif font-bold text-primaryBrown flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span>What makes Chittor Black Limestone special?</span>
+                        <i class="fa-solid fa-chevron-down text-accentGold transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed hidden">
+                        Chittor Black Limestone is famed for its deep carbon-black tone, high density, and low porosity. Unlike other stones, it holds its rich dark color remarkably well and is slip-resistant, making it ideal for patios and paving.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-cardBg rounded-2xl border border-lightSand overflow-hidden shadow-sm">
+                    <button class="w-full px-6 py-5 text-left font-serif font-bold text-primaryBrown flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span>Do you export natural stones internationally?</span>
+                        <i class="fa-solid fa-chevron-down text-accentGold transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed hidden">
+                        Yes! Shri Devnarayan Natural Stone is a leading manufacturer and exporter. We export container shipments worldwide with secure wooden crating and fumigation compliance.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-cardBg rounded-2xl border border-lightSand overflow-hidden shadow-sm">
+                    <button class="w-full px-6 py-5 text-left font-serif font-bold text-primaryBrown flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span>Can I request custom sizes and surface finishes?</span>
+                        <i class="fa-solid fa-chevron-down text-accentGold transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed hidden">
+                        Yes, we offer custom cutting, calibrated thickness, and various finishes including natural split, tumbled, honed, brushed, and sandblasted as per your project needs.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-cardBg rounded-2xl border border-lightSand overflow-hidden shadow-sm">
+                    <button class="w-full px-6 py-5 text-left font-serif font-bold text-primaryBrown flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        <span>How can I get pricing and a shipping quote?</span>
+                        <i class="fa-solid fa-chevron-down text-accentGold transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-5 text-gray-600 text-sm leading-relaxed hidden">
+                        You can instantly connect with us via WhatsApp at 7976839091 or use our inquiry form to share your required stone quantity and destination port.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact Section -->
+    <footer id="footer" class="bg-darkBrown text-warmCream pt-20 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Col 1 -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-accentGold text-darkBrown font-serif font-bold flex items-center justify-center text-lg">
+                            SD
+                        </div>
+                        <span class="font-serif text-xl font-bold tracking-wide">SHRI DEVNARAYAN</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                        Leading manufacturer, exporter, and distributor of Natural Stones, Chittor Black Limestone, and Sandstone from Rajasthan, India.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/chittor_black_limestone444" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-accentGold hover:text-darkBrown flex items-center justify-center transition-colors" title="Instagram">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/917976839091" target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-green-600 flex items-center justify-center transition-colors" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="tel:7976839091" class="w-10 h-10 rounded-full bg-white/10 hover:bg-primaryBrown flex items-center justify-center transition-colors" title="Call">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-6 text-lightSand">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-warmCream transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-warmCream transition-colors">About Us</a></li>
+                        <li><a href="#products" class="hover:text-warmCream transition-colors">Collections</a></li>
+                        <li><a href="#map-section" class="hover:text-warmCream transition-colors">Location</a></li>
+                        <li><a href="#reviews" class="hover:text-warmCream transition-colors">Reviews</a></li>
+                        <li><a href="#faq" class="hover:text-warmCream transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-6 text-lightSand">Stone Categories</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><span class="hover:text-warmCream cursor-pointer" onclick="openInquiry('Chittor Black Limestone')">Chittor Black Limestone</span></li>
+                        <li><span class="hover:text-warmCream cursor-pointer" onclick="openInquiry('Kandla Grey Sandstone')">Kandla Grey Sandstone</span></li>
+                        <li><span class="hover:text-warmCream cursor-pointer" onclick="openInquiry('Indian Porphyry Stone')">Indian Porphyry Stone</span></li>
+                        <li><span class="hover:text-warmCream cursor-pointer" onclick="openInquiry('Black Limestone Cobbles')">Limestone Cobbles & Setts</span></li>
+                        <li><span class="hover:text-warmCream cursor-pointer" onclick="openInquiry('Natural Teak Sandstone')">Natural Teak Sandstone</span></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-6 text-lightSand">Contact & Social</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-phone text-accentGold mt-1"></i>
+                            <a href="tel:7976839091" class="hover:text-warmCream font-medium text-warmCream">7976839091</a>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-accentGold mt-1"></i>
+                            <span>Chittorgarh, Rajasthan, India</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-brands fa-instagram text-accentGold mt-1"></i>
+                            <a href="https://www.instagram.com/chittor_black_limestone444" target="_blank" class="hover:text-warmCream font-medium text-warmCream">@chittor_black_limestone444</a>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-brands fa-whatsapp text-green-500 mt-1"></i>
+                            <a href="https://wa.me/917976839091" target="_blank" class="hover:text-warmCream font-medium text-warmCream">Chat on WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400">
+                <p>&copy; 2026 Shri Devnarayan Natural Stone. All rights reserved. Chittorgarh, Rajasthan.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="https://www.instagram.com/chittor_black_limestone444" target="_blank" class="hover:text-accentGold">Instagram: @chittor_black_limestone444</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Magnetic Call & WhatsApp Action Buttons -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col space-y-3">
+        <!-- Call Button -->
+        <a href="tel:7976839091" class="magnetic-btn w-14 h-14 rounded-full bg-primaryBrown text-warmCream flex items-center justify-center shadow-2xl hover:bg-darkBrown transition-all duration-300 transform hover:scale-110 group relative" title="Call Us: 7976839091">
+            <i class="fa-solid fa-phone text-xl"></i>
+            <span class="absolute right-16 bg-darkBrown text-warmCream text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+                Call: 7976839091
+            </span>
+        </a>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/917976839091?text=Hello%20Shri%20Devnarayan%20Natural%20Stone,%20I%20would%20like%20to%20inquire%20about%20your%20natural%20stones." target="_blank" class="magnetic-btn w-14 h-14 rounded-full bg-green-600 text-warmCream flex items-center justify-center shadow-2xl hover:bg-green-500 transition-all duration-300 transform hover:scale-110 group relative" title="WhatsApp Us">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span class="absolute right-16 bg-darkBrown text-warmCream text-xs px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+                WhatsApp Us
+            </span>
+        </a>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-warmCream text-3xl hover:text-accentGold">&times;</button>
+        <img id="lightbox-img" src="" alt="Enlarged View" class="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain">
+    </div>
+
+    <!-- Quote / Inquiry Modal -->
+    <div id="quote-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-stoneBg rounded-3xl p-8 max-w-md w-full shadow-2xl border border-lightSand relative reveal active">
+            <button onclick="closeQuoteModal()" class="absolute top-5 right-5 text-gray-500 hover:text-primaryBrown text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-primaryBrown mb-2">Request Stone Quote</h3>
+            <p class="text-xs text-gray-600 mb-6">Fill in your requirements below to connect instantly with Shri Devnarayan Natural Stone via WhatsApp.</p>
+            
+            <form id="inquiry-form" onsubmit="submitInquiry(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-primaryBrown uppercase mb-1">Your Name</label>
+                    <input type="text" id="inq-name" required class="w-full bg-cardBg border border-lightSand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accentGold">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-primaryBrown uppercase mb-1">Phone Number</label>
+                    <input type="tel" id="inq-phone" required class="w-full bg-cardBg border border-lightSand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accentGold" value="7976839091">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-primaryBrown uppercase mb-1">Stone Product / Requirement</label>
+                    <input type="text" id="inq-product" required class="w-full bg-cardBg border border-lightSand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accentGold" value="Chittor Black Limestone">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-primaryBrown uppercase mb-1">Message / Quantity (Sq.Ft / Containers)</label>
+                    <textarea id="inq-msg" rows="3" class="w-full bg-cardBg border border-lightSand rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-accentGold" placeholder="Mention project destination or approx quantity..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primaryBrown hover:bg-darkBrown text-warmCream font-semibold py-3.5 rounded-xl transition-all shadow-md">
+                    Send Inquiry via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity, Filters, Animations & Modals -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Reveal Intersection Observer
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Product Collection Filter Tabs
+        function filterProducts(category) {
+            // Update active tab button style
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-primaryBrown', 'text-warmCream');
+                btn.classList.add('bg-cardBg', 'text-primaryBrown');
+            });
+            event.target.classList.remove('bg-cardBg', 'text-primaryBrown');
+            event.target.classList.add('bg-primaryBrown', 'text-warmCream');
+
+            // Filter items
+            const items = document.querySelectorAll('.product-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Lightbox Modal Functions
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = img.src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+
+        // Quote Modal Functions
+        function openQuoteModal() {
+            const modal = document.getElementById('quote-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function openInquiry(productName) {
+            document.getElementById('inq-product').value = productName;
+            openQuoteModal();
+        }
+
+        function closeQuoteModal() {
+            const modal = document.getElementById('quote-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function submitInquiry(event) {
+            event.preventDefault();
+            const name = document.getElementById('inq-name').value;
+            const phone = document.getElementById('inq-phone').value;
+            const product = document.getElementById('inq-product').value;
+            const msg = document.getElementById('inq-msg').value;
+
+            const whatsappUrl = `https://wa.me/917976839091?text=${encodeURIComponent(`Hello Shri Devnarayan Natural Stone,\n\nName: ${name}\nPhone: ${phone}\nProduct: ${product}\nDetails: ${msg}`)}`;
+            window.open(whatsappUrl, '_blank');
+            closeQuoteModal();
+        }
+
+        // Magnetic Hover Physics for Floating Buttons
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.1)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
